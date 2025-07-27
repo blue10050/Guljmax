@@ -119,9 +119,7 @@ class Note:
             self.y = JUDGE_LINE_Y
         else:
             self.y = NOTE_START_Y + (JUDGE_LINE_Y - NOTE_START_Y) * (t / NOTE_TRAVEL_TIME)
-        # 노트가 처음 등장한 시각 기록
-        # if self.spawn_time is None and t >= 0: # 이 부분은 더 이상 사용되지 않음
-        #     self.spawn_time = current_time
+
 
     def draw(self, surface):
         if not self.hit and not self.missed and self.y <= JUDGE_LINE_Y:
@@ -184,10 +182,10 @@ def select_difficulty():
     selecting = True
     font = pygame.font.SysFont(None, 48)
     buttons = [
-        ("Easyun", (80, 150, 320, 60)),
+        ("Easy", (80, 150, 320, 60)),
         ("Normal", (80, 230, 320, 60)),
         ("Hard", (80, 310, 320, 60)),
-        ("Gunddong", (80, 390, 320, 60)),
+        ("Impossible", (80, 390, 320, 60)),
     ]
     while selecting:
         screen.fill((30, 30, 30))
